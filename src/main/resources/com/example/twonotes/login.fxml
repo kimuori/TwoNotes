@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane maxHeight="400.0" maxWidth="520.0" minHeight="400.0" minWidth="520.0" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.twonotes.Controller">
+   <left>
+      <AnchorPane maxHeight="400.0" maxWidth="228.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: #1e81b0;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutY="93.0" prefHeight="17.0" prefWidth="228.0" text="ICS 372-01" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="114.0" layoutY="166.0" startX="-100.0" stroke="WHITE" />
+            <TextFlow layoutX="45.0" layoutY="200.0" lineSpacing="7.0" prefHeight="142.0" prefWidth="138.0" textAlignment="CENTER">
+               <children>
+                  <Label text="CREATORS" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="110.0" text="Mohamed Albatushi" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Madeline Imhoff" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Jet Lao" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Jemina Maasin" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Collin Skogen" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </TextFlow>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane maxHeight="400.0" maxWidth="332.0" minHeight="-Infinity" prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="84.0" prefWidth="293.0" text="TwoNotes" textAlignment="CENTER" textFill="#1e81b0">
+               <font>
+                  <Font name="Calibri Light" size="36.0" />
+               </font>
+            </Label>
+            <Line endX="146.0" layoutX="146.0" layoutY="85.0" startX="-146.0" stroke="#1e81b0" />
+            <Label alignment="CENTER" layoutY="102.0" prefHeight="28.0" prefWidth="293.0" text="Secure Log In" textAlignment="CENTER" textFill="#1e81b0">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="151.0" prefHeight="28.0" prefWidth="85.0" text="Username" textAlignment="CENTER" textFill="#1e81b0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="191.0" prefHeight="28.0" prefWidth="85.0" text="Password" textAlignment="CENTER" textFill="#1e81b0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTextField" layoutX="115.0" layoutY="151.0" prefHeight="28.0" prefWidth="147.0" promptText="Type Username">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Button fx:id="loginButton" layoutX="30.0" layoutY="249.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="232.0" style="-fx-background-color: #1e81b0;" text="Log In" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="forgotPasswordButton" layoutX="30.0" layoutY="294.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="232.0" style="-fx-background-color: #1e81b0;" text="Forgot Password?" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="passwordTextField" layoutX="115.0" layoutY="191.0" prefHeight="28.0" prefWidth="147.0" promptText="Type Password">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
