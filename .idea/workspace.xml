@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="New classes for project milestone 3. These classes set up the backend of our project. The Organizable serves as an interface class for future button and note usage. The user class is an abstract class that is implemented by the customer and admin classes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Course.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,20 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Collin-Skogen"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="3c57fe5d-ef6c-4b15-a18a-5cd28e6eb69a" />
-        <option name="url" value="https://github.com/Collin-Skogen/TwoNotes.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/twonotes/Admin.java" root0="SKIP_INSPECTION" />
@@ -132,15 +119,7 @@
       <option name="project" value="LOCAL" />
       <updated>1695682473297</updated>
     </task>
-    <task id="LOCAL-00004" summary="New classes for project milestone 3. These classes set up the backend of our project. The Organizable serves as an interface class for future button and note usage. The user class is an abstract class that is implemented by the customer and admin classes.">
-      <option name="closed" value="true" />
-      <created>1695683555809</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1695683555809</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
