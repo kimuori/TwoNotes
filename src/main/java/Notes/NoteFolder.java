@@ -1,4 +1,6 @@
-package com.example.twonotes;
+package Notes;
+
+import Notes.Organizable;
 
 import java.util.ArrayList;
 import java.util.List;

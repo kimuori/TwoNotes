@@ -1,4 +1,4 @@
-package com.example.twonotes;
+package Notes;
 
 public interface Organizable {
     String getName();
