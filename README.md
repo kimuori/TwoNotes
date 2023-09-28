@@ -1,5 +1,5 @@
-# Two Notes Program 
-#### By Mohamed Albatushi, Madeline Imhoff, Jet Lao, Jemina Maasin, and Collin Skogen
+# TwoNotes Program 
+By Mohamed Albatushi, Madeline Imhoff, Jet Lao, Jemina Maasin, and Collin Skogen
 
 ### Installation Instructions
 This project uses Gradle through "Gradle Wrapper". This project requires JDK of version 17.
@@ -16,6 +16,9 @@ Then in build.gradle, ensure that the javafx version is '20.0.1'. If not, change
 ### Current Problems:
 The project may show up "WARNING: Loading FXML document with JavaFX API of version 
 20.0.1 by JavaFX runtime of version 17.0.6" on other people's systems.
+
+Some potential versioning conflict of the project not having Collin's appended changes to the project.
+This version should reflect his changes.
 
 ### Miscellaneous notes:
 This program references from YouTube channels such as:
