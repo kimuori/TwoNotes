@@ -1,20 +1,21 @@
-# Two Notes Program
+# Two Notes Program 
+#### By Mohamed Albatushi, Madeline Imhoff, Jet Lao, Jemina Maasin, and Collin Skogen
 
 ### Installation Instructions
+This project uses Gradle through "Gradle Wrapper". This project requires JDK of version 17.
 
-This project uses Gradle through "Gradle Wrapper". The JDK requires version 17 using IntelliJ IDEA.
-
-To download the JDK, go to "File" > "Settings" > "Build, Execution, Deployment" > "Build Tools" > "Gradle".
-Then in the pane on the right near the bottom there is a dropdown menu labeled "Gradle JVM". Click on the 
-dropdown, then on "+ Add SDK" -> "Download JDK". In the new popup select 17 for version and then for version 
-select "Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4". If you have a Mac with Apple Silicon select
+Go to "File" > "Settings" > "Build, Execution, Deployment" > "Build Tools" > "Gradle" under "Gradle Projects", 
+click on the pane on the right near the bottom there is a dropdown menu labeled "Gradle JVM". Click on the dropdown, 
+then on "+ Add SDK" -> "Download JDK". In the new popup select 17 for version and then for version select 
+"Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4". If you have a Mac with Apple Silicon select 
 "Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4 aarch64".
 
-Additonal Note: On build.gradle, ensure that the version is '20.0.1' inside `javafx{...}` block.
+Then in build.gradle, ensure that the javafx version is '20.0.1'. If not, change it from '17.0.6' to '20.0.1'.
+
 
 ### Current Problems:
-The project GitHub is currently having version conflicts.
-This version should be the most recent update of Collin's appended changes to the project.
+The project may show up "WARNING: Loading FXML document with JavaFX API of version 
+20.0.1 by JavaFX runtime of version 17.0.6" on other people's systems.
 
 ### Miscellaneous notes:
 This program references from YouTube channels such as:
