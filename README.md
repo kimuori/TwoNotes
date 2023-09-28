@@ -2,23 +2,21 @@
 
 ### Installation Instructions
 
-Download [JavaFX](https://gluonhq.com/products/javafx/) under "Supported Platforms".
-This will show up as a zip folder "javafx-sdk-21". Extract this folder into your C:\Program Files\Java.
-* [Installation reference for JavaFX Setup](https://javabook.bloomu.edu/setupjavafx.html#:~:text=Click%20on%20the%20File%20menu,button%20to%20complete%20the%20process)
+This project uses Gradle through "Gradle Wrapper". The JDK requires version 17 using IntelliJ IDEA.
 
-This project uses "Temurin-20" to math with the JavaFX. 
+To download the JDK, go to "File" > "Settings" > "Build, Execution, Deployment" > "Build Tools" > "Gradle".
+Then in the pane on the right near the bottom there is a dropdown menu labeled "Gradle JVM". Click on the 
+dropdown, then on "+ Add SDK" -> "Download JDK". In the new popup select 17 for version and then for version 
+select "Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4". If you have a Mac with Apple Silicon select
+"Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4 aarch64".
+
+Additonal Note: On build.gradle, ensure that the version is '20.0.1' inside `javafx{...}` block.
 
 ### Current Problems:
-The project may show up "WARNING: Loading FXML document with JavaFX API of version 
-20.0.1 by JavaFX runtime of version 17.0.6" . This has yet to be fixed.
+The project GitHub is currently having version conflicts.
+This version should be the most recent update of Collin's appended changes to the project.
 
 ### Miscellaneous notes:
-The Project Structure dependencies of TwoNotes program uses:
-* javafx.**base**.jar
-* javafx.**controls**.jar
-* javafx.**fxml**.jar
-* javafx.**graphics**.jar
-
 This program references from YouTube channels such as:
 * tookootek
     1. https://youtu.be/Ll2n9tGlCv0?si=gmE0SL-6qXmoEPww
