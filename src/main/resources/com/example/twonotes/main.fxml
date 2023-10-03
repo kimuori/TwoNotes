@@ -39,7 +39,7 @@
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #1e81b0;" text="Add folder" textFill="WHITE">
+                      <Button fx:id="addFolderButton" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #1e81b0;" text="Add folder" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
@@ -80,12 +80,12 @@
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #1e81b0;" text="Add subfolder" textFill="WHITE">
+                      <Button mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button disable="true" mnemonicParsing="false" prefWidth="30.0" style="-fx-background-color: #1e81b0;" text="editSubfolder" textFill="WHITE">
+                        <Button disable="true" mnemonicParsing="false" prefWidth="30.0" style="-fx-background-color: #1e81b0;" text="editNote" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
@@ -101,7 +101,7 @@
                            <children>
                               <VBox>
                                  <children>
-                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: #e0eaee;" text="subfolder 1" textFill="#1e81b0">
+                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: #e0eaee;" text="note1" textFill="#1e81b0">
                                        <graphic>
                                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
                                        </graphic>
