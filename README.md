@@ -47,3 +47,5 @@ then on "+ Add SDK" -> "Download JDK". In the new popup select 17 for version an
 
 This project uses Gradle through "Gradle Wrapper". This project requires JDK of version 17.
 In `build.gradle`, ensure that the javafx version is `20.0.1`. If not, change it from `17.0.6` to `20.0.1`.
+
+**Please run the program on the main.java class**
