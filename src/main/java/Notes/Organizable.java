@@ -2,5 +2,5 @@ package Notes;
 
 public interface Organizable {
     String getName();
-    void setName(String name);
+    void setName(String Name);
 }
