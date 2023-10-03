@@ -1,4 +1,6 @@
-package com.example.twonotes;
+package User;
+
+import User.User;
 
 import java.util.Date;
 

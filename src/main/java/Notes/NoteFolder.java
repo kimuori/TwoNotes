@@ -1,13 +1,15 @@
-package com.example.twonotes;
+package Notes;
+
+import Notes.Organizable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Course implements Organizable {
+public class NoteFolder implements Organizable {
     private String name;
-    private List<Organizable> items; // Note folders
+    private List<Organizable> items; // Notes and subfolders
 
-    public Course(String name) {
+    public NoteFolder(String name) {
         this.name = name;
         this.items = new ArrayList<>();
     }
@@ -23,9 +25,9 @@ public class Course implements Organizable {
         this.name = name;
     }
 
-    // Methods for adding and retrieving note folders
-    public void addFolder(NoteFolder folder) {
-        items.add(folder);
+    // Methods for adding and retrieving items (Notes or subfolders)
+    public void addItem(Organizable item) {
+        items.add(item);
     }
 
     public List<Organizable> getItems() {
