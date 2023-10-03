@@ -38,11 +38,12 @@ The **user class** serves as our abstract class that can instantiate an new user
 ## Installation Instructions
 To run the application we have a run configuration that you can use in IntelliJ.
 
-To set up the project environment for IntelliJ on your machine, go to "File" > "Settings" > 
-"Build, Execution, Deployment" > "Build Tools" > "Gradle" under "Gradle Projects", click on the pane on the right near 
-the bottom there is a dropdown menu labeled "Gradle JVM". Click on the dropdown, then on "+ Add SDK" -> "Download JDK". 
-In the new popup select 17 for version and then for version select "Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4". 
-If you have a Mac with Apple Silicon select "Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4 aarch64".
+Go to "File" > "Settings" > "Build, Execution, Deployment" > "Build Tools" > 
+"Gradle" under "Gradle Projects", click on the pane on the right near the bottom 
+there is a dropdown menu labeled "Gradle JVM". Click on the dropdown,
+then on "+ Add SDK" -> "Download JDK". In the new popup select 17 for version and then for version select
+"Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4". If you have a Mac with Apple Silicon select
+"Eclipse Temurin (AdoptOpenJDK HotSpot) 17.0.4 aarch64".
 
 This project uses Gradle through "Gradle Wrapper". This project requires JDK of version 17.
 In `build.gradle`, ensure that the javafx version is `20.0.1`. If not, change it from `17.0.6` to `20.0.1`.
