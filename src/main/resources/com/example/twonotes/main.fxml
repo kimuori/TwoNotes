@@ -9,13 +9,12 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <MenuBar style="-fx-background-color: #f8f8f8;" styleClass="topMenuBar" BorderPane.alignment="CENTER">
         <menus>
@@ -29,41 +28,45 @@
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Account">
+               <items>
+                  <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" text="Log Out" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
    <left>
-      <AnchorPane prefHeight="427.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="427.0" prefWidth="470.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="427.0" prefWidth="175.0" style="-fx-background-color: #fff;">
+            <VBox prefHeight="427.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                <children>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                  <ToolBar prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button fx:id="addFolderButton" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #1e81b0;" text="Add folder" textFill="WHITE">
+                      <Button fx:id="addFolderButton" mnemonicParsing="false" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add folder" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button disable="true" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefWidth="30.0" style="-fx-background-color: #1e81b0;" text="editFolder" textFill="WHITE">
+                        <Button disable="true" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: #1e81b0;" text="Edit" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
-                           <graphic>
-                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
-                           </graphic>
+                        </Button>
+                        <Button disable="true" layoutX="104.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="13.0" />
+                           </font>
                         </Button>
                     </items>
                   </ToolBar>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="387.0" prefWidth="175.0">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="387.0" prefWidth="235.0">
                      <content>
                         <AnchorPane>
                            <children>
                               <VBox>
                                  <children>
-                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: #e0eaee;" text="folder1" textFill="#1e81b0">
-                                       <graphic>
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                                       </graphic>
+                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="folder1" textFill="#1e81b0">
                                        <font>
                                           <Font name="Calibri" size="13.0" />
                                        </font>
@@ -76,35 +79,34 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <VBox layoutX="175.0" prefHeight="427.0" prefWidth="175.0" style="-fx-background-color: #f1f1f1;">
+            <VBox layoutX="235.0" prefHeight="427.0" prefWidth="235.0" style="-fx-background-color: #f1f1f1;">
                <children>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                  <ToolBar prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
+                      <Button mnemonicParsing="false" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button disable="true" mnemonicParsing="false" prefWidth="30.0" style="-fx-background-color: #1e81b0;" text="editNote" textFill="WHITE">
+                        <Button disable="true" mnemonicParsing="false" prefWidth="40.0" style="-fx-background-color: #1e81b0;" text="Edit" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
-                           <graphic>
-                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
-                           </graphic>
+                        </Button>
+                        <Button disable="true" layoutX="104.0" layoutY="13.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="13.0" />
+                           </font>
                         </Button>
                     </items>
                   </ToolBar>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="387.0" prefWidth="175.0">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="387.0" prefWidth="235.0">
                      <content>
                         <AnchorPane>
                            <children>
                               <VBox>
                                  <children>
-                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: #e0eaee;" text="note1" textFill="#1e81b0">
-                                       <graphic>
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                                       </graphic>
+                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="note1" textFill="#1e81b0">
                                        <font>
                                           <Font name="Calibri" size="13.0" />
                                        </font>
@@ -121,7 +123,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="427.0" prefWidth="430.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="427.0" prefWidth="425.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
          <children>
             <TextField disable="true" layoutX="12.0" layoutY="52.0" prefHeight="48.0" prefWidth="218.0" promptText="Title">
                <font>

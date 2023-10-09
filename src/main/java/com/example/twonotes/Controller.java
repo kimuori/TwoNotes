@@ -45,4 +45,5 @@ public class Controller {
         stage.setResizable(false); //prevents window resizing
         stage.show();
     }
+
 }

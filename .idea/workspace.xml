@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="New Note instance variables/getters/setters deleted Date as a variable">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/signup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_25_2023_8_38_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_25_2023_8_38_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Added signup UI .fxml. Modified button controller functionality inside the Controller.java to switch scenes between login.fxml and signup.fxml.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696296809527</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added signup UI .fxml. Modified button controller functionality inside the Controller.java to switch scenes between login.fxml and signup.fxml.">
+      <option name="closed" value="true" />
+      <created>1696803137797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696803137797</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +171,7 @@
     <MESSAGE value="New classes for project milestone 3. These classes set up the backend of our project. The Organizable serves as an interface class for future button and note usage. The user class is an abstract class that is implemented by the customer and admin classes." />
     <MESSAGE value="Edited Readme to follow the instructions of the project milestone 3 assignment." />
     <MESSAGE value="New Note instance variables/getters/setters deleted Date as a variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Note instance variables/getters/setters deleted Date as a variable" />
+    <MESSAGE value="Added signup UI .fxml. Modified button controller functionality inside the Controller.java to switch scenes between login.fxml and signup.fxml." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added signup UI .fxml. Modified button controller functionality inside the Controller.java to switch scenes between login.fxml and signup.fxml." />
   </component>
 </project>
