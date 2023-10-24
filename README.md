@@ -20,6 +20,20 @@ The **customer class** serves as our main, average user class. This class can al
 
 The **user class** serves as our abstract class that can instantiate an new user. A new user needs to have certain information given that both an admin and customer will need. This data will be stored within our database. This class also holds getter/setters that will be needed in our code going forward, especially needed for the implementation of our database. 
 
+### 6 Functional Requirements
+1. <u>**Open a text:**</u> User can open up an existing text file in their local directory.
+2. <u>**Add a new folder:**</u> User can create a new folder within their local directory. 
+3. <u>**Add a new note:**</u> User can create a new note within their local directory.
+4. <u>**Delete existing folder:**</u> User can delete an existing folder in their directory. This will also delete the notes inside altogether.
+5. <u>**Delete existing note:**</u> User can delete and existing note existing inside a folder in their directory.
+6. <u>**Save existing note:**</u> User can save any added writes into an existing note.
+
+### 4 Non-Functional Requirements
+1. <u>**ata Retention:**</u> Retains data in the user's local directory.
+2. <u>**Flexibility:**</u> For example, we have implemented an Interface that can be flexible to implement both NoteFolder.java and Note.java.
+3. <u>**Stability:**</u> The application will remain constant and handle any exceptions to prevent from crashing.
+4. <u>**Resilience:**</u> Any writes, reads, or deletion from the user will not cause the application to crash.
+
 ### Conclusion:
 #### Classes that can be instantiated with the keyword new: 
 * Note
