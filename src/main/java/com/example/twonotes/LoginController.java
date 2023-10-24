@@ -19,6 +19,11 @@ public class LoginController {
     @FXML
     private Button loginButton;
 
+    /**
+     * Changes scenes to the main UI when the user clicks on the "Log in" button.
+     * @param event
+     * @throws IOException
+     */
     public void loginButtonOnAction (ActionEvent event) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -28,6 +33,11 @@ public class LoginController {
         stage.show();
     }
 
+    /**
+     * Changes scenes to the signup UI when the user wants to create an account.
+     * @param event
+     * @throws IOException
+     */
     public void signupPageButtonOnAction (ActionEvent event) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -37,6 +47,11 @@ public class LoginController {
         stage.show();
     }
 
+    /**
+     * Changes scenes back to log in UI in case the user wants to return back to the starting point.
+     * @param event
+     * @throws IOException
+     */
     public void loginPageButtonOnAction (ActionEvent event) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
