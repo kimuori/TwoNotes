@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Deleted Rename Buttons, set the main.java to show up Main.fxml.">
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Updated the README to add information about the functional requirements and non-functional requirements.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698107812526</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated the README to add information about the functional requirements and non-functional requirements.">
+      <option name="closed" value="true" />
+      <created>1698109103151</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698109103151</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +201,7 @@
     <MESSAGE value="New Note instance variables/getters/setters deleted Date as a variable" />
     <MESSAGE value="added fx:id names on important fucntionalites." />
     <MESSAGE value="Deleted Rename Buttons, set the main.java to show up Main.fxml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted Rename Buttons, set the main.java to show up Main.fxml." />
+    <MESSAGE value="Updated the README to add information about the functional requirements and non-functional requirements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the README to add information about the functional requirements and non-functional requirements." />
   </component>
 </project>
