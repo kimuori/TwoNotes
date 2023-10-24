@@ -24,16 +24,6 @@
                   <MenuItem fx:id="closeMenu" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Account">
-               <items>
-                  <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" text="Log Out" />
-               </items>
-            </Menu>
         </menus>
       </MenuBar>
    </top>
@@ -45,11 +35,6 @@
                   <ToolBar prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                     <items>
                       <Button fx:id="addFolderButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add folder" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="renameFolderButton" disable="true" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #1e81b0;" text="Rename" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
@@ -67,7 +52,7 @@
                            <children>
                               <VBox>
                                  <children>
-                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="folder1" textFill="#1e81b0">
+                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="Palceholder folder1" textFill="#1e81b0">
                                        <font>
                                           <Font name="Calibri" size="13.0" />
                                        </font>
@@ -89,11 +74,6 @@
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="renameNoteButton" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #1e81b0;" text="Rename" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="13.0" />
-                           </font>
-                        </Button>
                         <Button fx:id="deleteNodeButton" disable="true" layoutX="104.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Delete" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
@@ -107,7 +87,7 @@
                            <children>
                               <VBox>
                                  <children>
-                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="note1" textFill="#1e81b0">
+                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="Placeholder note1" textFill="#1e81b0">
                                        <font>
                                           <Font name="Calibri" size="13.0" />
                                        </font>
@@ -139,11 +119,6 @@
             <ToolBar prefHeight="40.0" prefWidth="430.0" style="-fx-background-color: #fff;">
               <items>
                 <Button fx:id="saveNoteButton" disable="true" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Save" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri Bold" size="13.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="deleteNoteButton" disable="true" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Delete" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="13.0" />
                      </font>
