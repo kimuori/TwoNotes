@@ -69,7 +69,7 @@
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button fx:id="addNoteButton" mnemonicParsing="false" onAction="#addNoteButtonOnAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
+                      <Button fx:id="addNoteButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>

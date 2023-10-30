@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Updated the README to add information about the functional requirements and non-functional requirements.">
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Changed fx:controller to &quot;MainController&quot; on `main.fxml`.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698109103151</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Changed fx:controller to &quot;MainController&quot; on `main.fxml`.">
+      <option name="closed" value="true" />
+      <created>1698709867593</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698709867594</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +212,7 @@
     <MESSAGE value="added fx:id names on important fucntionalites." />
     <MESSAGE value="Deleted Rename Buttons, set the main.java to show up Main.fxml." />
     <MESSAGE value="Updated the README to add information about the functional requirements and non-functional requirements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the README to add information about the functional requirements and non-functional requirements." />
+    <MESSAGE value="Changed fx:controller to &quot;MainController&quot; on `main.fxml`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed fx:controller to &quot;MainController&quot; on `main.fxml`." />
   </component>
 </project>

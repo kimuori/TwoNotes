@@ -16,6 +16,4 @@ public class MainController {
     private Scene scene;
     private Parent root;
 
-
-
 }
