@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.twonotes.FileController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.twonotes.MainController">
    <top>
       <MenuBar style="-fx-background-color: #f8f8f8;" styleClass="topMenuBar" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="openMenu" mnemonicParsing="false" onAction="#open_File" text="Open a File"/>
+              <MenuItem fx:id="openMenu" onAction="#open_File" mnemonicParsing="false" text="Open a File" />
                   <MenuItem fx:id="closeMenu" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
@@ -65,11 +65,11 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <VBox layoutX="235.0" prefHeight="427.0" prefWidth="235.0" style="-fx-background-color: #f1f1f1;">
+            <VBox fx:id="vbox2" layoutX="235.0" prefHeight="427.0" prefWidth="235.0" style="-fx-background-color: #f1f1f1;">
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
+                      <Button fx:id="addNoteButton" onAction= "#addNoteButtonOnAction" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
@@ -87,7 +87,7 @@
                            <children>
                               <VBox>
                                  <children>
-                                    <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="Placeholder note1" textFill="#1e81b0">
+                                    <Button fx:id="noteInstance" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #e0eaee;" text="Placeholder note1" textFill="#1e81b0">
                                        <font>
                                           <Font name="Calibri" size="13.0" />
                                        </font>
@@ -108,12 +108,12 @@
          <children>
             <TextField fx:id="fileTitle" layoutX="12.0" layoutY="52.0" prefHeight="48.0" prefWidth="218.0" promptText="Title">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri" size="18.0" />
                </font>
             </TextField>
             <TextArea fx:id="fileConent" editable="false" layoutX="12.0" layoutY="113.0" prefHeight="300.0" prefWidth="406.0" promptText="Make some notes!">
                <font>
-                  <Font name="Calibri" size="12.0" />
+                  <Font name="Calibri" size="14.0" />
                </font>
             </TextArea>
             <ToolBar prefHeight="40.0" prefWidth="430.0" style="-fx-background-color: #fff;">
