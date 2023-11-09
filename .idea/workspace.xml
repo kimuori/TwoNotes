@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Deleted Rename Buttons, set the main.java to show up Main.fxml.">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Added FileContorller functionality into the MainController. Modified the Main.fxml.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
     </list>
@@ -174,7 +173,31 @@
       <option name="project" value="LOCAL" />
       <updated>1698107812526</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated the README to add information about the functional requirements and non-functional requirements.">
+      <option name="closed" value="true" />
+      <created>1698109103151</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698109103151</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed fx:controller to &quot;MainController&quot; on `main.fxml`.">
+      <option name="closed" value="true" />
+      <created>1698709867593</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698709867594</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added FileContorller functionality into the MainController. Modified the Main.fxml.">
+      <option name="closed" value="true" />
+      <created>1699322335416</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699322335416</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +218,9 @@
     <MESSAGE value="New Note instance variables/getters/setters deleted Date as a variable" />
     <MESSAGE value="added fx:id names on important fucntionalites." />
     <MESSAGE value="Deleted Rename Buttons, set the main.java to show up Main.fxml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted Rename Buttons, set the main.java to show up Main.fxml." />
+    <MESSAGE value="Updated the README to add information about the functional requirements and non-functional requirements." />
+    <MESSAGE value="Changed fx:controller to &quot;MainController&quot; on `main.fxml`." />
+    <MESSAGE value="Added FileContorller functionality into the MainController. Modified the Main.fxml." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FileContorller functionality into the MainController. Modified the Main.fxml." />
   </component>
 </project>

@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 public class MainController implements Initializable {
     private Stage stage;
-    FileChooser filechooser = new FileChooser();
+    FileChooser fileChooser = new FileChooser();
 
     @FXML
     private TextArea fileConent;
@@ -38,10 +38,12 @@ public class MainController implements Initializable {
     @FXML
     public void addNoteButtonOnAction(ActionEvent event) {
         // FileChooser used to open a file dialog for the user to specify a file name & location within the directory
-        FileChooser fileChooser = new FileChooser();
         // Extension filter is added to restrict the selection to txt files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
+        //console update on text file's path
+        System.out.println( "\nText file created = " + selectedFile.getAbsolutePath() + "\n");
+
         // Checks if a file was selected; it will write a default string into the text file.
         if (selectedFile != null) {
             try {
@@ -98,7 +100,10 @@ public class MainController implements Initializable {
      */
     @FXML
     public void open_File(ActionEvent actionEvent) {
-        File file = filechooser.showOpenDialog(new Stage());
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        File file = fileChooser.showOpenDialog(new Stage());
+        //console update opening a text file
+        System.out.println( "\nText file opened = " + file.getAbsolutePath() + "\n");
 
         try  {
             Scanner scan = new Scanner(file);
@@ -134,7 +139,7 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize (URL location, ResourceBundle resources) {
-        filechooser.setInitialDirectory(new File("C:\\Users"));
+        fileChooser.setInitialDirectory(new File("C:\\Users"));
     }
 
 
