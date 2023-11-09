@@ -64,9 +64,6 @@ In `build.gradle`, ensure that the javafx version is `20.0.1`. If not, change it
 ## References
 Documentation and references used for this project.
 1. [Oracle JavaFX UI FileChooser ](https://docs.oracle.com/javafx/2/ui_controls/file-chooser.htm)
-   1. [JavaFX stage FileChooser](http://www.java2s.com/example/java-api/javafx/stage/filechooser/filechooser-0-1.html)
+   1. [JavaFX stage FileChooser (Java2s)](http://www.java2s.com/example/java-api/javafx/stage/filechooser/filechooser-0-1.html)
    2. [JavaFX FileChooser (Jenkov)](https://jenkov.com/tutorials/javafx/filechooser.html)
 2. [Oracle JavaFX UI List View](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/list-view.htm)
-
-
-
