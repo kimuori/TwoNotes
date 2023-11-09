@@ -2,16 +2,13 @@ package com.example.twonotes;
 
 import java.io.*;
 import java.io.IOException;
-
 import Notes.Note;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
-
 import javafx.stage.FileChooser;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -72,7 +69,6 @@ public class MainController implements Initializable {
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
-
     }
 
     /**
@@ -122,8 +118,6 @@ public class MainController implements Initializable {
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
-
-
     }
 
     /**
@@ -141,6 +135,5 @@ public class MainController implements Initializable {
     public void initialize (URL location, ResourceBundle resources) {
         fileChooser.setInitialDirectory(new File("C:\\Users"));
     }
-
 
 }
