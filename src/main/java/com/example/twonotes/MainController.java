@@ -37,11 +37,10 @@ public class MainController implements Initializable {
      */
     @FXML
     public void addNoteButtonOnAction(ActionEvent event) {
-        // FileChooser used to open a file dialog for the user to specify a file name & location within the directory
-        // Extension filter is added to restrict the selection to txt files only
+        // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
-        File selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
-        //console update on text file's path
+        File selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
+        //console update where a text file is created
         System.out.println( "\nText file created = " + selectedFile.getAbsolutePath() + "\n");
 
         // Checks if a file was selected; it will write a default string into the text file.
@@ -100,14 +99,15 @@ public class MainController implements Initializable {
      */
     @FXML
     public void open_File(ActionEvent actionEvent) {
+        // Extension filter is added to restrict the selection to open text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
-        File file = fileChooser.showOpenDialog(new Stage());
-        //console update opening a text file
-        System.out.println( "\nText file opened = " + file.getAbsolutePath() + "\n");
+        File openFile = fileChooser.showOpenDialog(new Stage());
+        //console update where a text file is opened
+        System.out.println( "\nText file opened = " + openFile.getAbsolutePath() + "\n");
 
         try  {
-            Scanner scan = new Scanner(file);
-            Scanner scanTitle = new Scanner(file.getName());
+            Scanner scan = new Scanner(openFile);
+            Scanner scanTitle = new Scanner(openFile.getName());
 
             //reads the fine name line
             while (scanTitle.hasNextLine()){
