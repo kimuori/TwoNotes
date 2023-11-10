@@ -5,6 +5,7 @@ import java.io.IOException;
 import Notes.Note;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,15 +15,30 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+/**
+ * MainController class accompanies the Main.java, the class that initializes the main.fxml.
+ * This controller class has the button listeners whenever the end-user interacts with the UI program.
+ *
+ * @author Mohammed, Collin, Madeline, Jet, Jemina
+ *
+ */
 public class MainController implements Initializable {
     private Stage stage;
     FileChooser fileChooser = new FileChooser();
+
+    // ADDED: becomes global variable so the current text file can be used throughout the program
+    File selectedFile;
+
+    Note aNote;
 
     @FXML
     private TextArea fileConent;
 
     @FXML
     private TextField fileTitle;
+
+    @FXML
+    private Button saveNoteButton;
 
     /**
      * addNoteButtonOnAction method is called when "Add Note" button is clicked. It will
@@ -36,15 +52,18 @@ public class MainController implements Initializable {
     public void addNoteButtonOnAction(ActionEvent event) {
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
-        File selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
-        //console update where a text file is created
+        selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
+        // console update where a text file is created
         System.out.println( "\nText file created = " + selectedFile.getAbsolutePath() + "\n");
 
         // Checks if a file was selected; it will write a default string into the text file.
         if (selectedFile != null) {
             try {
-                String content = "Write content here!.";
-                writeTextToFile(selectedFile, content); //method to write content on the text file
+                String content = "Write content here!"; // initial default text
+                writeTextToFile(selectedFile, content); // method to write content on the text file
+                // ADDED: Changes properties on the saveNoteButton and fileContent
+                fileConent.setEditable(true); // allows TextArea editable
+                saveNoteButton.setDisable(false); // makes save button accessible
             } catch (IOException e) {
                 e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
             }
@@ -54,14 +73,14 @@ public class MainController implements Initializable {
             Scanner scan = new Scanner(selectedFile); // scans the file that has been created above
             Scanner scanTitle = new Scanner(selectedFile.getName()); //scans the file's name
 
-            Note aNote = new Note(scanTitle.toString()); //stores the new note instantiation to the Note object
+            aNote = new Note(scanTitle.toString()); //stores the new note instantiation to the Note object
 
-            //reads the fine name line
+            // reads the fine name line
             while (scanTitle.hasNextLine()){
                 fileTitle.appendText(scanTitle.nextLine());
             }
 
-            //reads the text file content each line
+            // reads the text file content each line
             while (scan.hasNextLine()){
                 fileConent.appendText(scan.nextLine() + "\n");
             }
@@ -77,12 +96,30 @@ public class MainController implements Initializable {
      * and ensures the file is closed correctly.
      *
      * @author Madeline
-     * @param file, content
+     * @param filePath, content
      */
-    private void writeTextToFile(File file, String content) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+    private void writeTextToFile(File filePath, String content) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(content);
         }
+    }
+
+    /**
+     * saveNoteButtonOnAction method allows to save new writes into the text file that
+     * was created or opened.
+     *
+     * @author Jemina
+     * @param event
+     */
+    @FXML
+    private void saveNoteButtonOnAction (ActionEvent event) throws IOException{
+        File textFilePath= selectedFile; //current path the user is using the text file
+        // gathers text content even the new lines
+        String content = fileConent.getText().replaceAll("\n", System.getProperty("line.separator"));
+
+        writeTextToFile(textFilePath, content); // method to buffer write the content
+
+        System.out.println("Successfully wrote to the file.");
     }
 
     /**
@@ -97,20 +134,28 @@ public class MainController implements Initializable {
     public void open_File(ActionEvent actionEvent) {
         // Extension filter is added to restrict the selection to open text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
-        File openFile = fileChooser.showOpenDialog(new Stage());
-        //console update where a text file is opened
-        System.out.println( "\nText file opened = " + openFile.getAbsolutePath() + "\n");
+        selectedFile = fileChooser.showOpenDialog(new Stage());
+        // console update where a text file is opened
+        System.out.println( "\nText file opened = " + selectedFile.getAbsolutePath() + "\n");
+
+        if (selectedFile != null) {
+            // ADDED: Changes properties on the saveNoteButton and fileContent
+            fileConent.setEditable(true); // allows TextArea editable
+            saveNoteButton.setDisable(false); // makes save button accessible
+        }
 
         try  {
-            Scanner scan = new Scanner(openFile);
-            Scanner scanTitle = new Scanner(openFile.getName());
+            Scanner scan = new Scanner(selectedFile);
+            Scanner scanTitle = new Scanner(selectedFile.getName());
 
-            //reads the fine name line
+            aNote = new Note(scanTitle.toString()); // stores opened note instantiation to the Note object
+
+            // reads the fine name line
             while (scanTitle.hasNextLine()){
                 fileTitle.appendText(scanTitle.nextLine());
             }
 
-            //reads the text file content each line
+            // reads the text file content each line
             while (scan.hasNextLine()){
                 fileConent.appendText(scan.nextLine() + "\n");
             }

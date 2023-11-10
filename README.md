@@ -67,6 +67,6 @@ Documentation and references used for this project.
    1. [JavaFX stage FileChooser](http://www.java2s.com/example/java-api/javafx/stage/filechooser/filechooser-0-1.html)
    2. [JavaFX FileChooser (Jenkov)](https://jenkov.com/tutorials/javafx/filechooser.html)
 2. [Oracle JavaFX UI List View](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/list-view.htm)
-
-
-
+3. [Oracle setDisable a property](https://docs.oracle.com/javafx/2/api/javafx/scene/Node.html#setDisable(boolean))
+4. [Get TextArea content and line breaks](https://stackoverflow.com/questions/41664796/how-to-get-text-from-textarea-in-javafx-saving-line-breaks)
+5. [Text Editor (EdenCoding)](https://edencoding.com/how-to-open-edit-sync-and-save-a-text-file-in-javafx/)

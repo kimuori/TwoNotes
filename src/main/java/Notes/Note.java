@@ -2,21 +2,15 @@ package Notes;
 
 import Notes.Organizable;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Note implements Organizable {
     private String name;
 
-    private int noteID;
-
-    private String content;
-
-
-
     public Note(String name) {
         this.name = name;
-        //this.noteID = noteID;
-        //this.content = content;
     }
 
     // Implement methods from the Organizable interface

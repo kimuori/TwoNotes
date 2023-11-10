@@ -20,7 +20,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="openMenu" onAction="#open_File" mnemonicParsing="false" text="Open a File" />
+              <MenuItem fx:id="openMenu" mnemonicParsing="false" onAction="#open_File" text="Open a File" />
                   <MenuItem fx:id="closeMenu" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
@@ -69,7 +69,7 @@
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="235.0" style="-fx-background-color: #fff;">
                     <items>
-                      <Button fx:id="addNoteButton" onAction= "#addNoteButtonOnAction" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
+                      <Button fx:id="addNoteButton" mnemonicParsing="false" onAction="#addNoteButtonOnAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #1e81b0;" text="Add note" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="13.0" />
                            </font>
@@ -111,14 +111,14 @@
                   <Font name="Calibri" size="18.0" />
                </font>
             </TextField>
-            <TextArea fx:id="fileConent" editable="false" layoutX="12.0" layoutY="113.0" prefHeight="300.0" prefWidth="406.0" promptText="Make some notes!">
+            <TextArea fx:id="fileConent" editable="false" layoutX="12.0" layoutY="113.0" prefHeight="300.0" prefWidth="406.0" promptText="Open or create a note!">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </TextArea>
             <ToolBar prefHeight="40.0" prefWidth="430.0" style="-fx-background-color: #fff;">
               <items>
-                <Button fx:id="saveNoteButton" disable="true" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Save" textFill="WHITE">
+                <Button fx:id="saveNoteButton" disable="true" mnemonicParsing="false" onAction="#saveNoteButtonOnAction" prefWidth="60.0" style="-fx-background-color: #1e81b0;" text="Save" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="13.0" />
                      </font>
