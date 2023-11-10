@@ -86,13 +86,10 @@ public class MainController implements Initializable {
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
+        System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
 
         //Note note = new Note("Note " + index2, index2);
-        if (selectedFile != null) { // Checks if a file was selected
-            selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
-            // console update where a text file is created
-            System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
-        }
+
         // Checks if a file was selected; it will write a default string into the text file.
         if (selectedFile != null) {
             try {
@@ -101,6 +98,7 @@ public class MainController implements Initializable {
                 // ADDED: Changes properties on the saveNoteButton and fileContent
                 fileConent.setEditable(true); // allows TextArea editable
                 saveNoteButton.setDisable(false); // makes save button accessible
+
             } catch (IOException e) {
                 e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
             }
