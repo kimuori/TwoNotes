@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Minor variable name change and modified comments.">
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Added functionality to save button. Added comments to document changes and description. Added more references in README.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Notes/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notes/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" afterDir="false" />
     </list>
@@ -217,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699560798871</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added functionality to save button. Added comments to document changes and description. Added more references in README.">
+      <option name="closed" value="true" />
+      <created>1699591726275</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699591726275</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +248,7 @@
     <MESSAGE value="Added FileContorller functionality into the MainController. Modified the Main.fxml." />
     <MESSAGE value="Modified the open file and new note feature to print the path on console. fileChooser is now global." />
     <MESSAGE value="Minor variable name change and modified comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor variable name change and modified comments." />
+    <MESSAGE value="Added functionality to save button. Added comments to document changes and description. Added more references in README." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to save button. Added comments to document changes and description. Added more references in README." />
   </component>
 </project>

@@ -45,16 +45,20 @@ public class MainController implements Initializable {
      * create a test file and the user can choose its name. The note content
      * will show up in the local UI.
      *
-     * @author Jemina, Madeline, Jet
+     * @author Madeline, Jemina, Jet
      * @param event
      */
     @FXML
     public void addNoteButtonOnAction(ActionEvent event) {
+        // ADDED: This prevents textArea/textField overlapping whenever user opens/creates a text file
+        fileConent.clear();
+        fileTitle.clear();
+        System.out.println("Dashboard is cleared");
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
         // console update where a text file is created
-        System.out.println( "\nText file created = " + selectedFile.getAbsolutePath() + "\n");
+        System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
 
         // Checks if a file was selected; it will write a default string into the text file.
         if (selectedFile != null) {
@@ -88,6 +92,12 @@ public class MainController implements Initializable {
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
+
+        //debugging
+        //String textAreaContent = fileConent.getText();
+        // (!(textAreaContent.isEmpty())){
+        //    System.out.println("TextArea not empty? true");
+        //}
     }
 
     /**
@@ -132,6 +142,10 @@ public class MainController implements Initializable {
      */
     @FXML
     public void open_File(ActionEvent actionEvent) {
+        // ADDED: This prevents textArea/textField overlapping whenever user opens/creates a text file
+        fileConent.clear();
+        fileTitle.clear();
+        System.out.println("Dashboard is cleared");
         // Extension filter is added to restrict the selection to open text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         selectedFile = fileChooser.showOpenDialog(new Stage());
@@ -163,6 +177,12 @@ public class MainController implements Initializable {
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
+
+        // debugging
+        //String textAreaContent = fileConent.getText();
+        //if (!(textAreaContent.isEmpty())){
+        //    System.out.println("TextArea not empty? true");
+        //}
     }
 
     /**
