@@ -35,7 +35,6 @@ public class Note implements Organizable {
         this.noteID = noteID;
     }
 
-    public void setName(String name) {this.name = name;}
     //public String getContent(){return content;}
     //public void setContent(String content){this.content = content;}
     //public int getNoteID() {return noteID;}

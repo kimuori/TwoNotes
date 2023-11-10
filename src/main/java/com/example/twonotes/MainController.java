@@ -3,44 +3,24 @@ package com.example.twonotes;
 
 import Notes.Note;
 import Notes.NoteFolder;
-import javafx.beans.InvalidationListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.io.IOException;
-import Notes.Note;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxListCell;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
 import javafx.event.ActionEvent;
 import javafx.stage.FileChooser;
-
-
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -63,6 +43,8 @@ public class MainController implements Initializable {
     File selectedFile;
 
     Note aNote;
+
+    int index2 =1;
 
     FileChooser filechooser = new FileChooser();
   
@@ -104,17 +86,13 @@ public class MainController implements Initializable {
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
-        
-        int index2 =1;
-        Note note = new Note("Note " + index2, index2);
-        noteListView.getItems().add(note.getName());
-        index2++;
+
+        //Note note = new Note("Note " + index2, index2);
         if (selectedFile != null) { // Checks if a file was selected
-
-        selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
-        // console update where a text file is created
-        System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
-
+            selectedFile = fileChooser.showSaveDialog(stage); // Open a save dialog
+            // console update where a text file is created
+            System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
+        }
         // Checks if a file was selected; it will write a default string into the text file.
         if (selectedFile != null) {
             try {
@@ -132,7 +110,9 @@ public class MainController implements Initializable {
             Scanner scan = new Scanner(selectedFile); // scans the file that has been created above
             Scanner scanTitle = new Scanner(selectedFile.getName()); //scans the file's name
 
-            aNote = new Note(scanTitle.toString()); //stores the new note instantiation to the Note object
+            aNote = new Note(scanTitle.toString(), index2); //stores the new note instantiation to the Note object
+            index2++;
+            noteListView.getItems().add(aNote.getName());
 
             // reads the fine name line
             while (scanTitle.hasNextLine()){
@@ -148,11 +128,6 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
 
-        //debugging
-        //String textAreaContent = fileConent.getText();
-        // (!(textAreaContent.isEmpty())){
-        //    System.out.println("TextArea not empty? true");
-        //}
     }
 
     /**
@@ -163,7 +138,7 @@ public class MainController implements Initializable {
      * @author Madeline
      * @param filePath, content
      */
-    private void writeTextToFile(File filePath, String content) throws IOException {
+    private void writeTextToFile (File filePath, String content) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(content);
         }
@@ -217,7 +192,8 @@ public class MainController implements Initializable {
             Scanner scan = new Scanner(selectedFile);
             Scanner scanTitle = new Scanner(selectedFile.getName());
 
-            aNote = new Note(scanTitle.toString()); // stores opened note instantiation to the Note object
+            aNote = new Note(scanTitle.toString(), index2); // stores opened note instantiation to the Note object
+            index2++;
 
             // reads the fine name line
             while (scanTitle.hasNextLine()){
@@ -233,11 +209,6 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
 
-        // debugging
-        //String textAreaContent = fileConent.getText();
-        //if (!(textAreaContent.isEmpty())){
-        //    System.out.println("TextArea not empty? true");
-        //}
     }
 
     /**
@@ -255,16 +226,28 @@ public class MainController implements Initializable {
     public void initialize (URL location, ResourceBundle resources) throws NullPointerException {
         filechooser.setInitialDirectory(new File("C:\\Users"));
     }
-      
+
+    /**
+     *
+     * @author Collin
+     * @param event
+     */
     @FXML
-    public void addFolderOnAction(ActionEvent event)  {
+    public void addFolderOnAction(ActionEvent event){
         NoteFolder noteFolder = new NoteFolder("Note Folder " + addFolderListView.getEditingIndex(), null, addFolderListView.getEditingIndex());
         addFolderListView.getItems().add(noteFolder.getName());
+        deleteFolderButton.setDisable(false); // delete folder button is accessible
+    }
 
+    /**
+     *
+     * @author Collin
+     * @param event
+     */
     @FXML
     public void deleteFolderOnAction(ActionEvent event) {
         String index = addFolderListView.getSelectionModel().getSelectedItem();
         addFolderListView.getItems().remove(index);
     }
-      
+
 }
