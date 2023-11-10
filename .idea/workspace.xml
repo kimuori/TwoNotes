@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="New Note instance variables/getters/setters deleted Date as a variable">
+
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Added functionality to save button. Added comments to document changes and description. Added more references in README.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Notes/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notes/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Notes/NoteFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notes/NoteFolder.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" afterDir="false" />
     </list>
@@ -160,7 +160,73 @@
       <option name="project" value="LOCAL" />
       <updated>1696296809527</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    
+    <task id="LOCAL-00006" summary="added fx:id names on important fucntionalites.">
+      <option name="closed" value="true" />
+      <created>1698106004942</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698106004942</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Deleted Rename Buttons, set the main.java to show up Main.fxml.">
+      <option name="closed" value="true" />
+      <created>1698107812526</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698107812526</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated the README to add information about the functional requirements and non-functional requirements.">
+      <option name="closed" value="true" />
+      <created>1698109103151</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698109103151</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed fx:controller to &quot;MainController&quot; on `main.fxml`.">
+      <option name="closed" value="true" />
+      <created>1698709867593</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698709867594</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added FileContorller functionality into the MainController. Modified the Main.fxml.">
+      <option name="closed" value="true" />
+      <created>1699322335416</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699322335416</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Modified the open file and new note feature to print the path on console. fileChooser is now global.">
+      <option name="closed" value="true" />
+      <created>1699560395602</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699560395602</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Minor variable name change and modified comments.">
+      <option name="closed" value="true" />
+      <created>1699560798871</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699560798871</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added functionality to save button. Added comments to document changes and description. Added more references in README.">
+      <option name="closed" value="true" />
+      <created>1699591726275</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699591726275</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +245,14 @@
     <MESSAGE value="New classes for project milestone 3. These classes set up the backend of our project. The Organizable serves as an interface class for future button and note usage. The user class is an abstract class that is implemented by the customer and admin classes." />
     <MESSAGE value="Edited Readme to follow the instructions of the project milestone 3 assignment." />
     <MESSAGE value="New Note instance variables/getters/setters deleted Date as a variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Note instance variables/getters/setters deleted Date as a variable" />
+    <MESSAGE value="added fx:id names on important fucntionalites." />
+    <MESSAGE value="Deleted Rename Buttons, set the main.java to show up Main.fxml." />
+    <MESSAGE value="Updated the README to add information about the functional requirements and non-functional requirements." />
+    <MESSAGE value="Changed fx:controller to &quot;MainController&quot; on `main.fxml`." />
+    <MESSAGE value="Added FileContorller functionality into the MainController. Modified the Main.fxml." />
+    <MESSAGE value="Modified the open file and new note feature to print the path on console. fileChooser is now global." />
+    <MESSAGE value="Minor variable name change and modified comments." />
+    <MESSAGE value="Added functionality to save button. Added comments to document changes and description. Added more references in README." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to save button. Added comments to document changes and description. Added more references in README." />
   </component>
 </project>
