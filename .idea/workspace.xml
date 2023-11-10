@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="New listener for addnotelistView. New functionality for the addnotefolder." />
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="deleted the file declaration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +50,14 @@
     &quot;assignee&quot;: &quot;Collin-Skogen&quot;
   }
 }</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3c57fe5d-ef6c-4b15-a18a-5cd28e6eb69a" />
+        <option name="url" value="https://github.com/mellenena/TwoNotes.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/twonotes/Admin.java" root0="SKIP_INSPECTION" />
   </component>
@@ -66,20 +76,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Benjamin-work",
-    "last_opened_file_path": "C:/Users/cskog/Music/TwoNotes/TwoNotes",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Benjamin-work&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cskog/Music/TwoNotes/TwoNotes&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cskog\OneDrive\Documents\GitHub\TwoNotes\src" />
@@ -234,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699648743432</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="deleted the file declaration">
+      <option name="closed" value="true" />
+      <created>1699649056698</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699649056699</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +281,7 @@
     <MESSAGE value="Added functionality to save button. Added comments to document changes and description. Added more references in README." />
     <MESSAGE value="Merged Collin's work to the main branch. Added fucntionality to add folder and delete folder." />
     <MESSAGE value="New listener for addnotelistView. New functionality for the addnotefolder." />
-    <option name="LAST_COMMIT_MESSAGE" value="New listener for addnotelistView. New functionality for the addnotefolder." />
+    <MESSAGE value="deleted the file declaration" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted the file declaration" />
   </component>
 </project>
