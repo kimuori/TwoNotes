@@ -193,10 +193,10 @@ public class MainController implements Initializable {
             aNote = new Note(scanTitle.toString(), index2); // stores opened note instantiation to the Note object
             index2++;
 
-            // reads the fine name line
-            while (scanTitle.hasNextLine()){
-                fileTitle.appendText(scanTitle.nextLine());
-            }
+            // REMOVED: while loop to read text file name
+            //while (scanTitle.hasNextLine()){
+            fileTitle.appendText(selectedFile.getName());
+            //}
 
             // reads the text file content each line
             while (scan.hasNextLine()){
