@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 
 import java.util.*;
 
-public class NoteFolder {
+public class NoteFolder extends NoteAbstract implements Organizable {
 
     private String name;
     public int index;
@@ -20,6 +20,11 @@ public class NoteFolder {
     }
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void setName(String Name) {
+
     }
 
     public void setName(String name, int index) {

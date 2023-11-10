@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Note implements Organizable {
+public class Note extends NoteAbstract implements Organizable {
     private String name;
     private int noteID;
 

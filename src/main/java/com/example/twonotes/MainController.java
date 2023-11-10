@@ -85,7 +85,7 @@ public class MainController implements Initializable {
         System.out.println("Dashboard is cleared");
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
-        File selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
+        selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
         System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
 
         //Note note = new Note("Note " + index2, index2);
