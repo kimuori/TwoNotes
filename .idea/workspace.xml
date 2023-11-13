@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Added deleteNoteButton functionality. Currently buggy, but handles the bug exception. Updated the README for added resources.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Improved README and minor comment changes in the MainController class.">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699854720133</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Improved README and minor comment changes in the MainController class.">
+      <option name="closed" value="true" />
+      <created>1699890069960</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699890069960</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,6 +317,7 @@
     <MESSAGE value="Modified the while-loop to read Text File." />
     <MESSAGE value="Fixed bugs to show the fileTitle on the ListView. Renamed a variable in MainController and main.fxml. Added more comments." />
     <MESSAGE value="Added deleteNoteButton functionality. Currently buggy, but handles the bug exception. Updated the README for added resources." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added deleteNoteButton functionality. Currently buggy, but handles the bug exception. Updated the README for added resources." />
+    <MESSAGE value="Improved README and minor comment changes in the MainController class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved README and minor comment changes in the MainController class." />
   </component>
 </project>

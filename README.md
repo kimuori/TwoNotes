@@ -36,7 +36,7 @@ TwoNotes is an application for users to create, open, or delete folders or text 
 
 `NoteFolder` class works as a collection class for the note class. This class will instantiate a new arraylist that serves a collection for notes.
 
-`NoteAbstract` is an abstract class that has a concrete method to implement the Note class.
+`NoteAbstract` is an abstract class that has a concrete attribute to implement the Note class.
 
 `Organizable` class works as the interface that is implemented by the Note and NoteFolder class. This class will serve as a place where we can create more methods that needs to be implemented by the notes and the note folders classes.
 
