@@ -11,6 +11,7 @@ public class Note extends NoteAbstract implements Organizable {
     private int noteID;
 
 
+
     public Note(String name, int noteID) {
         this.name = name;
         this.noteID = noteID;
