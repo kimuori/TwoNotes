@@ -10,6 +10,7 @@ TwoNotes is an application for users to create, open, or delete folders or text 
 2. <u>**Add a new folder:**</u> User can create a new folder within their local directory. 
 3. <u>**Add a new note:**</u> User can create a new note within their local directory.
 4. <u>**Delete existing folder:**</u> User can delete an existing folder in their directory. This will also delete the notes inside the UI.
+   * NOTE: although this functionality handles exceptions, deleting files does not work currently.
 5. <u>**Delete existing note:**</u> User can delete and existing note existing inside a folder in their directory.
 6. <u>**Save existing note:**</u> User can save any added writes into an existing note.
 
@@ -23,10 +24,10 @@ TwoNotes is an application for users to create, open, or delete folders or text 
 * Organizable
 
 #### Abstract Class:
-* User
+* NoteAbstract
 
 #### _.com.example.twonotes_ Package:
-`Main` class is the main program to run the TwoNotes UI.
+`Main` class is the main program to run the TwoNotes GUI.
 
 `MainController` class accompanies the aforementioned class. This has the button listeners whenever the end-user interacts with the program.
 
@@ -35,14 +36,9 @@ TwoNotes is an application for users to create, open, or delete folders or text 
 
 `NoteFolder` class works as a collection class for the note class. This class will instantiate a new arraylist that serves a collection for notes.
 
-`Organizable` class works as the interface that is implemented by the note and notefolder class. This class will serve as a place where we can create more methods that needs to be implemented by the notes and the note folders classes.
+`NoteAbstract` is an abstract class that has a concrete method to implement the Note class.
 
-#### _User_ Package:
-`Admin` class serves to have more access to data compared to the customer. We plan to implement a database. The difference between customer and admin will be the amount of access to the database with the admin obviously having more access. This class can also be instantiated with the word new.
-
-`Customer` class serves as our main, average user class. This class can also be instantiated by the word new.
-
-`User` class serves as our abstract class that can instantiate an new user. A new user needs to have certain information given that both an admin and customer will need. This data will be stored within our database. This class also holds getter/setters that will be needed in our code going forward, especially needed for the implementation of our database.
+`Organizable` class works as the interface that is implemented by the Note and NoteFolder class. This class will serve as a place where we can create more methods that needs to be implemented by the notes and the note folders classes.
 
 
 ## Installation

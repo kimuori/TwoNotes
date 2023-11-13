@@ -198,6 +198,7 @@ public class MainController implements Initializable {
         } else {
             System.out.println("Failed to delete the file.");
         } */
+
         /* Debugging code portion 2 */
         //NOTE: this delete button does not successfuly delete the text file due to being used in another process.
         Path path = selectedFile.toPath();
