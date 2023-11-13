@@ -67,3 +67,5 @@ Documentation and references used for this project.
 4. [Get TextArea content and line breaks](https://stackoverflow.com/questions/41664796/how-to-get-text-from-textarea-in-javafx-saving-line-breaks)
 5. [Text Editor (EdenCoding)](https://edencoding.com/how-to-open-edit-sync-and-save-a-text-file-in-javafx/)
 6. [Oracle deleting a file](https://docs.oracle.com/javase/tutorial/essential/io/delete.html)
+7. [Java "user.dir" Property"](https://stackoverflow.com/questions/16239130/java-user-dir-property-what-exactly-does-it-mean)
+8. [Java create directory (Mykong)](https://mkyong.com/java/how-to-create-directory-in-java/)
