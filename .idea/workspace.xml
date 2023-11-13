@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Improved README and minor comment changes in the MainController class.">
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Minor change in the README.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699890069960</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Minor change in the README.">
+      <option name="closed" value="true" />
+      <created>1699890211292</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699890211292</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,6 +329,17 @@
     <MESSAGE value="Fixed bugs to show the fileTitle on the ListView. Renamed a variable in MainController and main.fxml. Added more comments." />
     <MESSAGE value="Added deleteNoteButton functionality. Currently buggy, but handles the bug exception. Updated the README for added resources." />
     <MESSAGE value="Improved README and minor comment changes in the MainController class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved README and minor comment changes in the MainController class." />
+    <MESSAGE value="Minor change in the README." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor change in the README." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

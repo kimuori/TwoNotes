@@ -10,8 +10,8 @@ TwoNotes is an application for users to create, open, or delete folders or text 
 2. <u>**Add a new folder:**</u> User can create a new folder within their local directory. 
 3. <u>**Add a new note:**</u> User can create a new note within their local directory.
 4. <u>**Delete existing folder:**</u> User can delete an existing folder in their directory. This will also delete the notes inside the UI.
-   * NOTE: although this functionality handles exceptions, deleting files does not work currently.
 5. <u>**Delete existing note:**</u> User can delete and existing note existing inside a folder in their directory.
+   * NOTE: although this functionality handles exceptions, deleting files does not work currently.
 6. <u>**Save existing note:**</u> User can save any added writes into an existing note.
 
 ### 4 Non-Functional Requirements
@@ -60,7 +60,7 @@ In `build.gradle`, ensure that the javafx version is `20.0.1`. If not, change it
 ## References
 Documentation and references used for this project.
 1. [Oracle JavaFX UI FileChooser ](https://docs.oracle.com/javafx/2/ui_controls/file-chooser.htm)
-   1. [JavaFX stage FileChooser](http://www.java2s.com/example/java-api/javafx/stage/filechooser/filechooser-0-1.html)
+   1. [JavaFX stage FileChooser (Java2s)](http://www.java2s.com/example/java-api/javafx/stage/filechooser/filechooser-0-1.html)
    2. [JavaFX FileChooser (Jenkov)](https://jenkov.com/tutorials/javafx/filechooser.html)
 2. [Oracle JavaFX UI List View](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/list-view.htm)
 3. [Oracle setDisable a property](https://docs.oracle.com/javafx/2/api/javafx/scene/Node.html#setDisable(boolean))

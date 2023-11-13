@@ -7,6 +7,7 @@ import Notes.NoteFolder;
 import java.io.*;
 import java.io.IOException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.*;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ import javafx.event.ActionEvent;
 
 /**
  * MainController class accompanies the Main.java, the class that initializes the main.fxml.
- * This controller class has the button listeners whenever the end-user interacts with the UI program.
+ * This controller class has the button listeners whenever the end-user interacts with the GUI program.
  *
  * @author Mohammed, Collin, Madeline, Jet, Jemina
  *
@@ -83,7 +84,7 @@ public class MainController implements Initializable {
     /**
      * addNoteButtonOnAction method is called when "Add Note" button is clicked. It will
      * create a test file and the user can choose its name. The note content
-     * will show up in the local UI.
+     * will show up in the local GUI.
      *
      * @author Madeline, Jemina, Jet, Collin
      *
@@ -97,23 +98,33 @@ public class MainController implements Initializable {
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
-        System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
 
-        // Checks if a file was selected; it will write a default string into the text file.
-        if (selectedFile != null) {
-            try {
+        //NOTE: made a try-catch block to handle nullPointers and InvocationTargetException.
+        try {
+            // Checks if a file was selected; it will write a default string into the text file.
+            if (selectedFile != null) {
+                System.out.println("\nText file created = " + selectedFile.getAbsolutePath() + "\n");
                 String content = "Write content here!"; // initial default text
                 writeTextToFile(selectedFile, content); // method to write content on the text file
                 // ADDED: Changes properties on the saveNoteButton and fileContent
                 fileContent.setEditable(true); // allows TextArea editable
                 saveNoteButton.setDisable(false); // makes save button accessible
                 deleteNoteButton.setDisable(false); // makes delete button accessible
-
-            } catch (IOException e) {
-                e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
             }
+            else {
+                //Notifies in the console that selectedFile is null.
+                System.out.println("InvocationTargetException is thrown.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            System.out.println("Exception handled due to text files not being created in the FileChooser.");
+        } catch(Exception e){
+            e.printStackTrace();
         }
-        // NOTE: Added functionality based on open_File method to show the created file to the local UI.
+
+        // NOTE: Added functionality based on open_File method to show the created file to the local GUI.
         try  {
             Scanner scan = new Scanner(selectedFile); // scans the file that has been created above
             //Scanner scanTitle = new Scanner(selectedFile.getName()); //scans the file's name
@@ -131,8 +142,6 @@ public class MainController implements Initializable {
             while (scan.hasNextLine()){
                 fileContent.appendText(scan.nextLine() + "\n");
             }
-
-            //System.out.println("Path file content:\n" +  fileConent.getText());
 
         } catch (FileNotFoundException e){
             e.printStackTrace();
@@ -219,7 +228,7 @@ public class MainController implements Initializable {
     /**
      * open_File method is called when "Open a File" is clicked from the upper left corner.
      * This gives the user to traverse through the directory and select a text file.
-     * The textfile will show up in the local UI.
+     * The textfile will show up in the local GUI.
      *
      * @author Jet, Jemina, Collin
      *
@@ -233,14 +242,29 @@ public class MainController implements Initializable {
         // Extension filter is added to restrict the selection to open text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         selectedFile = fileChooser.showOpenDialog(new Stage());
-        // console update where a text file is opened
-        System.out.println( "\nText file opened = " + selectedFile.getAbsolutePath() + "\n");
 
-        if (selectedFile != null) {
-            // ADDED: Changes properties on the saveNoteButton and fileContent
-            fileContent.setEditable(true); // allows TextArea editable
-            saveNoteButton.setDisable(false); // makes save button accessible
-            deleteNoteButton.setDisable(false); // makes delete button accessible
+        //NOTE: made a try-catch block to handle nullPointers and InvocationTargetException.
+        try {
+            // Checks if a file was opened.
+            if (selectedFile != null) {
+                // console update where a text file is opened
+                System.out.println( "\nText file opened = " + selectedFile.getAbsolutePath() + "\n");
+                // ADDED: Changes properties on the saveNoteButton and fileContent
+                fileContent.setEditable(true); // allows TextArea editable
+                saveNoteButton.setDisable(false); // makes save button accessible
+                deleteNoteButton.setDisable(false); // makes delete button accessible
+            }
+            else{
+                //Notifies in the console that selectedFile is null.
+                System.out.println("InvocationTargetException is thrown.");
+            }
+
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            System.out.println("Exception handled due to NullPointer in the FileChooser.");
+
+        } catch(Exception e){
+            e.printStackTrace();
         }
 
         try  {
@@ -261,10 +285,8 @@ public class MainController implements Initializable {
                 fileContent.appendText(scan.nextLine() + "\n");
             }
 
-            //System.out.println("Path file content:\n" +  fileConent.getText());
-
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
         }
 
     }

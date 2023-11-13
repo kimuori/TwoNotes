@@ -11,8 +11,7 @@ import java.io.IOException;
  * This application allows users to create, open, or
  * delete folders or text files,and users can
  * overwrite existing text files.
- *
- * Main class is the main program to run the TwoNotes UI
+ * Main class is the main program to run the TwoNotes GUI
  *
  * @author Mohammed, Collin, Madeline, Jet, Jemina
  */
