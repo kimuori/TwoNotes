@@ -25,6 +25,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
+import javafx.stage.DirectoryChooser;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -32,11 +33,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 
+import javax.swing.*;
+
 /**
  * MainController class accompanies the Main.java, the class that initializes the main.fxml.
  * This controller class has the button listeners whenever the end-user interacts with the GUI program.
  *
- * @author Mohammed, Collin, Madeline, Jet, Jemina
+ * @author Collin, Madeline, Jet, Jemina
  *
  */
 public class MainController implements Initializable {
@@ -45,8 +48,11 @@ public class MainController implements Initializable {
 
     FileChooser fileChooser = new FileChooser();
 
+    DirectoryChooser directoryChooser = new DirectoryChooser();
+
     // ADDED: becomes global variable so the current text file can be used throughout the program
     File selectedFile;
+    String userHomeDirectory;
 
     Note aNote;
 
@@ -292,6 +298,60 @@ public class MainController implements Initializable {
     }
 
     /**
+     * addFolderOnAction creates a new folder in the user's home directory
+     * and creates the name of the folder, creates List of folders, and its indices.
+     *
+     * @author Collin, Jemina
+     *
+     */
+    @FXML
+    public void addFolderOnAction(ActionEvent event) throws IOException {
+        NoteFolder noteFolder = new NoteFolder("NoteFolder" + (data.size()+1), null, (data.size()+1));
+        data.add(noteFolder);
+        addFolderListView.getItems().add(noteFolder.getName());
+        String newFolderDirectory = userHomeDirectory.concat("\\") + noteFolder.getName();
+        deleteFolderButton.setDisable(false); // delete folder button is accessible
+
+        Path path = Paths.get(newFolderDirectory);
+        Files.createDirectories(path);
+        System.out.println("Directory is created!");
+
+        //File selectedDirectory = directoryChooser.showDialog(new Stage());
+        System.out.println("Folder selected = " + path.getFileName());
+
+    }
+
+    /**
+     * deleteFolderOnAction deletes the folder that has
+     * been selected in the list view.
+     *
+     * @author Collin, Jemina
+     *
+     */
+    @FXML
+    public void deleteFolderOnAction(ActionEvent event) {
+        String index = addFolderListView.getSelectionModel().getSelectedItem();
+        addFolderListView.getItems().remove(index);
+        String toDeleteFolderDirectory = userHomeDirectory.concat("\\") + index;
+
+        Path path = Paths.get(toDeleteFolderDirectory);
+        try {
+            Files.delete(path);
+            System.out.println("Successfully deleted a folder.");
+        } catch (NoSuchFileException x) {
+            System.err.format("%s: no such" + " file or directory%n", path);
+        } catch (DirectoryNotEmptyException x) {
+            System.err.format("%s not empty%n", path);
+        } catch (IOException x) {
+            // File permission problems are caught here.
+            System.err.println(x);
+            System.out.println("Nothing can be done.");
+        }
+    }
+
+    /**
+     * Runs along with the GUI. This sets the initial directory at C://Users/{user.home}
+     * This creates two listeners for the NoteFolder list view and the Note list view objects.
      *
      * @author Jet, Collin
      * @param location
@@ -304,7 +364,9 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize (URL location, ResourceBundle resources) throws NullPointerException {
-        fileChooser.setInitialDirectory(new File("C:\\Users"));
+        userHomeDirectory = System.getProperty("user.home"); //"C://users/userName"
+        System.out.println("Current Directory = " + userHomeDirectory);
+        fileChooser.setInitialDirectory(new File(userHomeDirectory));
 
         addFolderListView.getFocusModel().focusedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -326,42 +388,12 @@ public class MainController implements Initializable {
                     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                         Note currentNote = currentFolder.getFolder().get((Integer) newValue);
                         //currentNote
-
-
                     }
                 });
-
+                //noteListView.getItems().addAll(names); //gets the current folder names (not notes)
             }
-
         });
 
-    }
-
-    /**
-     *
-     * @author Collin
-     *
-     */
-    @FXML
-    public void addFolderOnAction(ActionEvent event){
-        NoteFolder noteFolder = new NoteFolder("Note Folder " + (data.size()+1), null, (data.size()+1));
-        data.add(noteFolder);
-        addFolderListView.getItems().add(noteFolder.getName());
-        deleteFolderButton.setDisable(false);// delete folder button is accessible
-
-    }
-
-    /**
-     *
-     * @author Collin
-     *
-     */
-    @FXML
-    public void deleteFolderOnAction(ActionEvent event) throws IndexOutOfBoundsException {
-        String index = addFolderListView.getSelectionModel().getSelectedItem();
-        if(!addFolderListView.getItems().isEmpty()) {
-            addFolderListView.getItems().remove(index);
-        }
     }
 
 }
