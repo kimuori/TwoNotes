@@ -310,20 +310,31 @@ public class MainController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 System.out.println(addFolderListView.getItems());
-                //NoteFolder currentFolder = data.get((Integer) newValue);
-                //noteListView.getItems().clear();
+                NoteFolder currentFolder = data.get((Integer) newValue);
+                noteListView.getItems().clear();
 
-                //List<String> names = currentFolder.getFolder().stream().map(new Function<Note, String>() {
-                    // getFolder needs to be a List not Observable at NoteFolder.java
-                //    @Override
-                //    public String apply(Note note) {
-                //        return note.getName();
-                //    }
-                //}).toList();
+                List<String> names = currentFolder.getFolder().stream().map(new Function<Note, String>() {
+                    @Override
+                    public String apply(Note note) {
+                       return note.getName();
+                   }
+                }).toList();
 
-                //noteListView.getItems().addAll(names); //gets the current folder names (not notes)
+                noteListView.getItems().addAll(names); //gets the current folder names (not notes)
+                noteListView.getFocusModel().focusedIndexProperty().addListener(new ChangeListener<Number>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                        Note currentNote = currentFolder.getFolder().get((Integer) newValue);
+                        //currentNote
+
+
+                    }
+                });
+
             }
+
         });
+
     }
 
     /**
@@ -333,12 +344,11 @@ public class MainController implements Initializable {
      */
     @FXML
     public void addFolderOnAction(ActionEvent event){
-        //NoteFolder noteFolder = new NoteFolder("Note Folder " + index1, null, index1);
-        //index1++;
-        NoteFolder noteFolder = new NoteFolder("Note Folder " + data.size()+1, null, data.size()+1);
+        NoteFolder noteFolder = new NoteFolder("Note Folder " + (data.size()+1), null, (data.size()+1));
         data.add(noteFolder);
         addFolderListView.getItems().add(noteFolder.getName());
-        deleteFolderButton.setDisable(false); // delete folder button is accessible
+        deleteFolderButton.setDisable(false);// delete folder button is accessible
+
     }
 
     /**
@@ -347,9 +357,11 @@ public class MainController implements Initializable {
      *
      */
     @FXML
-    public void deleteFolderOnAction(ActionEvent event) {
+    public void deleteFolderOnAction(ActionEvent event) throws IndexOutOfBoundsException {
         String index = addFolderListView.getSelectionModel().getSelectedItem();
-        addFolderListView.getItems().remove(index);
+        if(!addFolderListView.getItems().isEmpty()) {
+            addFolderListView.getItems().remove(index);
+        }
     }
 
 }
