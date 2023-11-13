@@ -50,8 +50,6 @@ public class NoteFolder extends NoteAbstract implements Organizable {
 
     public static ObservableList<Note> createFolder(){
         return new ObservableList<Note>() {
-
-
             @Override
             public void addListener(ListChangeListener<? super Note> listener) {
 
