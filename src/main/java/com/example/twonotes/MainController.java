@@ -7,11 +7,19 @@ import Notes.NoteFolder;
 import java.io.*;
 import java.io.IOException;
 
+import java.nio.file.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import java.net.URL;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
@@ -41,9 +49,12 @@ public class MainController implements Initializable {
 
     Note aNote;
 
-    int index2 =1;
+    int index1 = 1;
+    int index2 = 1;
 
-    FileChooser filechooser = new FileChooser();
+    ArrayList<NoteFolder> data = new ArrayList<>();
+
+    //FileChooser filechooser = new FileChooser();
   
     @FXML
     ListView<String> noteListView;
@@ -66,6 +77,9 @@ public class MainController implements Initializable {
     @FXML
     private Button saveNoteButton;
 
+    @FXML
+    private Button deleteNoteButton;
+
     /**
      * addNoteButtonOnAction method is called when "Add Note" button is clicked. It will
      * create a test file and the user can choose its name. The note content
@@ -79,7 +93,7 @@ public class MainController implements Initializable {
         // ADDED: This prevents textArea/textField overlapping whenever user opens/creates a text file
         fileContent.clear();
         fileTitle.clear();
-        System.out.println("Dashboard is cleared");
+        System.out.println("Dashboard is cleared.");
         // Extension filter is added to restrict the selection to create text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         selectedFile = fileChooser.showSaveDialog(stage); // Open a Save dialog
@@ -93,6 +107,7 @@ public class MainController implements Initializable {
                 // ADDED: Changes properties on the saveNoteButton and fileContent
                 fileContent.setEditable(true); // allows TextArea editable
                 saveNoteButton.setDisable(false); // makes save button accessible
+                deleteNoteButton.setDisable(false); // makes delete button accessible
 
             } catch (IOException e) {
                 e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
@@ -163,6 +178,44 @@ public class MainController implements Initializable {
     }
 
     /**
+     * deleteNoteButtonOnAction removes the current textFile
+     * that is currently being used in the dashboard.
+     *
+     * @author Jemina
+     * @param event
+     * @throws IOException
+     * @throws NoSuchFileException
+     * @throws DirectoryNotEmptyException
+     * @throws FileSystemException
+     */
+    @FXML
+    private void deleteNoteButtonOnAction (ActionEvent event) throws IOException, NoSuchFileException, DirectoryNotEmptyException, FileSystemException {
+        /* Debugging code portion 1
+        File textFilePath = selectedFile;
+        textFilePath.delete();
+        if (textFilePath.delete()) {
+            System.out.println("Successfully deleted file.");
+        } else {
+            System.out.println("Failed to delete the file.");
+        } */
+        /* Debugging code portion 2 */
+        //NOTE: this delete button does not successfuly delete the text file due to being used in another process.
+        Path path = selectedFile.toPath();
+        try {
+            Files.delete(path);
+            System.out.println("Successfully deleted ");
+        } catch (NoSuchFileException x) {
+            System.err.format("%s: no such" + " file or directory%n", path);
+        } catch (DirectoryNotEmptyException x) {
+            System.err.format("%s not empty%n", path);
+        } catch (IOException x) {
+            // File permission problems are caught here.
+            System.err.println(x);
+            System.out.println("Nothing can be done.");
+        }
+    }
+
+    /**
      * open_File method is called when "Open a File" is clicked from the upper left corner.
      * This gives the user to traverse through the directory and select a text file.
      * The textfile will show up in the local UI.
@@ -175,7 +228,7 @@ public class MainController implements Initializable {
         // ADDED: This prevents textArea/textField overlapping whenever user opens/creates a text file
         fileContent.clear();
         fileTitle.clear();
-        System.out.println("Dashboard is cleared");
+        System.out.println("Dashboard is cleared.");
         // Extension filter is added to restrict the selection to open text files only
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         selectedFile = fileChooser.showOpenDialog(new Stage());
@@ -186,6 +239,7 @@ public class MainController implements Initializable {
             // ADDED: Changes properties on the saveNoteButton and fileContent
             fileContent.setEditable(true); // allows TextArea editable
             saveNoteButton.setDisable(false); // makes save button accessible
+            deleteNoteButton.setDisable(false); // makes delete button accessible
         }
 
         try  {
@@ -216,7 +270,7 @@ public class MainController implements Initializable {
 
     /**
      *
-     * @author Jet
+     * @author Jet, Collin
      * @param location
      * The location used to resolve relative paths for the root object, or
      * {@code null} if the location is not known.
@@ -227,7 +281,26 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize (URL location, ResourceBundle resources) throws NullPointerException {
-        filechooser.setInitialDirectory(new File("C:\\Users"));
+        fileChooser.setInitialDirectory(new File("C:\\Users"));
+
+        addFolderListView.getFocusModel().focusedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println(addFolderListView.getItems());
+                //NoteFolder currentFolder = data.get((Integer) newValue);
+                //noteListView.getItems().clear();
+
+                //List<String> names = currentFolder.getFolder().stream().map(new Function<Note, String>() {
+                    // getFolder needs to be a List not Observable at NoteFolder.java
+                //    @Override
+                //    public String apply(Note note) {
+                //        return note.getName();
+                //    }
+                //}).toList();
+
+                //noteListView.getItems().addAll(names); //gets the current folder names (not notes)
+            }
+        });
     }
 
     /**
@@ -237,7 +310,10 @@ public class MainController implements Initializable {
      */
     @FXML
     public void addFolderOnAction(ActionEvent event){
-        NoteFolder noteFolder = new NoteFolder("Note Folder " + addFolderListView.getEditingIndex(), null, addFolderListView.getEditingIndex());
+        //NoteFolder noteFolder = new NoteFolder("Note Folder " + index1, null, index1);
+        //index1++;
+        NoteFolder noteFolder = new NoteFolder("Note Folder " + data.size()+1, null, data.size()+1);
+        data.add(noteFolder);
         addFolderListView.getItems().add(noteFolder.getName());
         deleteFolderButton.setDisable(false); // delete folder button is accessible
     }

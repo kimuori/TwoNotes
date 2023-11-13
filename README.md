@@ -70,3 +70,4 @@ Documentation and references used for this project.
 3. [Oracle setDisable a property](https://docs.oracle.com/javafx/2/api/javafx/scene/Node.html#setDisable(boolean))
 4. [Get TextArea content and line breaks](https://stackoverflow.com/questions/41664796/how-to-get-text-from-textarea-in-javafx-saving-line-breaks)
 5. [Text Editor (EdenCoding)](https://edencoding.com/how-to-open-edit-sync-and-save-a-text-file-in-javafx/)
+6. [Oracle deleting a file](https://docs.oracle.com/javase/tutorial/essential/io/delete.html)
