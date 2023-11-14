@@ -17,7 +17,6 @@ import java.util.Scanner;
 
 import java.net.URL;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -32,8 +31,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
-
-import javax.swing.*;
 
 /**
  * MainController class accompanies the Main.java, the class that initializes the main.fxml.
@@ -52,7 +49,8 @@ public class MainController implements Initializable {
 
     // ADDED: becomes global variable so the current text file can be used throughout the program
     File selectedFile;
-    String userHomeDirectory;
+    //String userHomeDirectory;
+    String twoNoteDirectory;
 
     Note aNote;
 
@@ -216,7 +214,11 @@ public class MainController implements Initializable {
 
         /* Debugging code portion 2 */
         //NOTE: this delete button does not successfuly delete the text file due to being used in another process.
+        //Need a way to "close out" the text file and then delete it.
+        fileContent.clear();
+        fileTitle.clear();
         Path path = selectedFile.toPath();
+
         try {
             Files.delete(path);
             System.out.println("Successfully deleted ");
@@ -309,7 +311,7 @@ public class MainController implements Initializable {
         NoteFolder noteFolder = new NoteFolder("NoteFolder" + (data.size()+1), null, (data.size()+1));
         data.add(noteFolder);
         addFolderListView.getItems().add(noteFolder.getName());
-        String newFolderDirectory = userHomeDirectory.concat("\\") + noteFolder.getName();
+        String newFolderDirectory = twoNoteDirectory.concat("\\") + noteFolder.getName();
         deleteFolderButton.setDisable(false); // delete folder button is accessible
 
         Path path = Paths.get(newFolderDirectory);
@@ -332,7 +334,7 @@ public class MainController implements Initializable {
     public void deleteFolderOnAction(ActionEvent event) {
         String index = addFolderListView.getSelectionModel().getSelectedItem();
         addFolderListView.getItems().remove(index);
-        String toDeleteFolderDirectory = userHomeDirectory.concat("\\") + index;
+        String toDeleteFolderDirectory = twoNoteDirectory.concat("\\") + index;
 
         Path path = Paths.get(toDeleteFolderDirectory);
         try {
@@ -364,9 +366,10 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize (URL location, ResourceBundle resources) throws NullPointerException {
-        userHomeDirectory = System.getProperty("user.home"); //"C://users/userName"
-        System.out.println("Current Directory = " + userHomeDirectory);
-        fileChooser.setInitialDirectory(new File(userHomeDirectory));
+        //userHomeDirectory = System.getProperty("user.home"); //"C://users/userName"
+        twoNoteDirectory = System.getProperty("user.home").concat("\\") + "TwoNotes";
+        System.out.println("Current Directory = " + twoNoteDirectory);
+        fileChooser.setInitialDirectory(new File(twoNoteDirectory));
 
         addFolderListView.getFocusModel().focusedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override

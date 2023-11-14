@@ -17,6 +17,9 @@ public class NoteFolder extends NoteAbstract implements Organizable {
         this.name = name;
         this.folder = folder;
         this.index = index;
+        //String str = "C://Users/Jemina/Folder1";
+        //String str2 = "{user.dir}" + "Folder1";
+
     }
     public String getName() {
         return name;

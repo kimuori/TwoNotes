@@ -15,6 +15,9 @@ public class Note extends NoteAbstract implements Organizable {
     public Note(String name, int noteID) {
         this.name = name;
         this.noteID = noteID;
+        //String str = "text.txt";
+        //String str2 = "Folder1";
+        //String str3 = "C://Users/Jemina/Folder1/text.txt";
     }
 
     // Implement methods from the Organizable interface
