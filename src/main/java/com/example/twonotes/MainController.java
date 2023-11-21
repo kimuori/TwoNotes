@@ -2,35 +2,33 @@ package com.example.twonotes;
 
 
 import Notes.Note;
+import Notes.Data;
 import Notes.NoteFolder;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
-import java.io.IOException;
-
-import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
 import java.nio.file.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-
-import java.net.URL;
 import java.util.function.Function;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.stage.Stage;
-import javafx.stage.FileChooser;
-import javafx.stage.DirectoryChooser;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
+import static com.example.twonotes.Main.loadData;
+
 
 /**
  * MainController class accompanies the Main.java, the class that initializes the main.fxml.
@@ -54,31 +52,37 @@ public class MainController implements Initializable {
 
     Note aNote;
 
-    int index1 = 1;
+    NoteFolder currentFolder;
+
     int index2 = 1;
 
-    ArrayList<NoteFolder> data = new ArrayList<>();
 
-    //FileChooser filechooser = new FileChooser();
-  
+//FileChooser filechooser = new FileChooser();
+
+    ArrayList<NoteFolder> data = loadData.getData();
+
+
+
+
     @FXML
     ListView<String> noteListView;
-  
+
     @FXML
     Button deleteFolderButton;
-  
+
     @FXML
     ListView<String> addFolderListView;
-  
+
+
     @FXML
     Button addFolderButton;
-  
+
     @FXML
     private TextArea fileContent;
 
     @FXML
     private TextField fileTitle;
-  
+
     @FXML
     private Button saveNoteButton;
 
@@ -91,8 +95,9 @@ public class MainController implements Initializable {
      * will show up in the local GUI.
      *
      * @author Madeline, Jemina, Jet, Collin
-     *
      */
+
+
     @FXML
     public void addNoteButtonOnAction(ActionEvent event) {
         // ADDED: This prevents textArea/textField overlapping whenever user opens/creates a text file
@@ -114,28 +119,28 @@ public class MainController implements Initializable {
                 fileContent.setEditable(true); // allows TextArea editable
                 saveNoteButton.setDisable(false); // makes save button accessible
                 deleteNoteButton.setDisable(false); // makes delete button accessible
-            }
-            else {
+            } else {
                 //Notifies in the console that selectedFile is null.
                 System.out.println("InvocationTargetException is thrown.");
             }
         } catch (IOException e) {
             e.printStackTrace(); // Stack trace is printed to the console if error occurs during file creation or writing process
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             e.printStackTrace();
             System.out.println("Exception handled due to text files not being created in the FileChooser.");
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         // NOTE: Added functionality based on open_File method to show the created file to the local GUI.
-        try  {
+        try {
             Scanner scan = new Scanner(selectedFile); // scans the file that has been created above
             //Scanner scanTitle = new Scanner(selectedFile.getName()); //scans the file's name
 
-            aNote = new Note(selectedFile.getName(), index2); // FIXED: Bug fix to show text file name to the ListView
+            aNote = new Note(selectedFile.getName(), index2, ""); // FIXED: Bug fix to show text file name to the ListView
             index2++;
-            noteListView.getItems().add(aNote.getName());
+            currentFolder.getFolder().add(aNote);
+
 
             // REMOVED: while loop to read text file name
             // while (scanTitle.hasNextLine()){
@@ -143,11 +148,11 @@ public class MainController implements Initializable {
             //}
 
             // reads the text file content each line
-            while (scan.hasNextLine()){
+            while (scan.hasNextLine()) {
                 fileContent.appendText(scan.nextLine() + "\n");
             }
 
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -158,15 +163,11 @@ public class MainController implements Initializable {
      * It uses the BufferedWriter class to write the content to the file
      * and ensures the file is closed correctly.
      *
+     * @param filePath Takes in File data type of the user's current disk directory.
+     * @param content  Takes in String data to write to the current text file.
      * @author Madeline
-     * @param filePath
-     * Takes in File data type of the user's current disk directory.
-     *
-     * @param content
-     * Takes in String data to write to the current text file.
-     *
      */
-    private void writeTextToFile (File filePath, String content) throws IOException {
+    private void writeTextToFile(File filePath, String content) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(content);
         }
@@ -177,11 +178,10 @@ public class MainController implements Initializable {
      * was created or opened.
      *
      * @author Jemina
-     *
      */
     @FXML
-    private void saveNoteButtonOnAction (ActionEvent event) throws IOException{
-        File textFilePath= selectedFile; //current path the user is using the text file
+    private void saveNoteButtonOnAction(ActionEvent event) throws IOException {
+        File textFilePath = selectedFile; //current path the user is using the text file
         // gathers text content even the new lines
         String content = fileContent.getText().replaceAll("\n", System.getProperty("line.separator"));
 
@@ -194,15 +194,15 @@ public class MainController implements Initializable {
      * deleteNoteButtonOnAction removes the current textFile
      * that is currently being used in the dashboard.
      *
-     * @author Jemina
      * @param event
      * @throws IOException
      * @throws NoSuchFileException
      * @throws DirectoryNotEmptyException
      * @throws FileSystemException
+     * @author Jemina
      */
     @FXML
-    private void deleteNoteButtonOnAction (ActionEvent event) throws IOException, NoSuchFileException, DirectoryNotEmptyException, FileSystemException {
+    private void deleteNoteButtonOnAction(ActionEvent event) throws IOException, NoSuchFileException, DirectoryNotEmptyException, FileSystemException {
         /* Debugging code portion 1
         File textFilePath = selectedFile;
         textFilePath.delete();
@@ -220,6 +220,7 @@ public class MainController implements Initializable {
         Path path = selectedFile.toPath();
 
         try {
+
             Files.delete(path);
             System.out.println("Successfully deleted ");
         } catch (NoSuchFileException x) {
@@ -239,7 +240,6 @@ public class MainController implements Initializable {
      * The textfile will show up in the local GUI.
      *
      * @author Jet, Jemina, Collin
-     *
      */
     @FXML
     public void open_File(ActionEvent actionEvent) {
@@ -256,30 +256,29 @@ public class MainController implements Initializable {
             // Checks if a file was opened.
             if (selectedFile != null) {
                 // console update where a text file is opened
-                System.out.println( "\nText file opened = " + selectedFile.getAbsolutePath() + "\n");
+                System.out.println("\nText file opened = " + selectedFile.getAbsolutePath() + "\n");
                 // ADDED: Changes properties on the saveNoteButton and fileContent
                 fileContent.setEditable(true); // allows TextArea editable
                 saveNoteButton.setDisable(false); // makes save button accessible
                 deleteNoteButton.setDisable(false); // makes delete button accessible
-            }
-            else{
+            } else {
                 //Notifies in the console that selectedFile is null.
                 System.out.println("InvocationTargetException is thrown.");
             }
 
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             e.printStackTrace();
             System.out.println("Exception handled due to NullPointer in the FileChooser.");
 
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        try  {
+        try {
             Scanner scan = new Scanner(selectedFile);
             //Scanner scanTitle = new Scanner(selectedFile.getName());
 
-            aNote = new Note(selectedFile.getName(), index2);  // FIXED: Bug fix to show text file name to the ListView
+            aNote = new Note(selectedFile.getName(), index2, "");  // FIXED: Bug fix to show text file name to the ListView
             index2++;
             noteListView.getItems().add(aNote.getName());
 
@@ -289,7 +288,7 @@ public class MainController implements Initializable {
             //}
 
             // reads the text file content each line
-            while (scan.hasNextLine()){
+            while (scan.hasNextLine()) {
                 fileContent.appendText(scan.nextLine() + "\n");
             }
 
@@ -304,18 +303,18 @@ public class MainController implements Initializable {
      * and creates the name of the folder, creates List of folders, and its indices.
      *
      * @author Collin, Jemina
-     *
      */
     @FXML
     public void addFolderOnAction(ActionEvent event) throws IOException {
-        NoteFolder noteFolder = new NoteFolder("NoteFolder" + (data.size()+1), null, (data.size()+1));
+        NoteFolder noteFolder = new NoteFolder("NoteFolder" + (data.size()), null, data.size());
         data.add(noteFolder);
-        addFolderListView.getItems().add(noteFolder.getName());
         String newFolderDirectory = twoNoteDirectory.concat("\\") + noteFolder.getName();
-        deleteFolderButton.setDisable(false); // delete folder button is accessible
-
         Path path = Paths.get(newFolderDirectory);
         Files.createDirectories(path);
+        addFolderListView.getItems().add(noteFolder.getName());
+        deleteFolderButton.setDisable(false); // delete folder button is accessible
+
+
         System.out.println("Directory is created!");
 
         //File selectedDirectory = directoryChooser.showDialog(new Stage());
@@ -328,7 +327,6 @@ public class MainController implements Initializable {
      * been selected in the list view.
      *
      * @author Collin, Jemina
-     *
      */
     @FXML
     public void deleteFolderOnAction(ActionEvent event) {
@@ -355,17 +353,14 @@ public class MainController implements Initializable {
      * Runs along with the GUI. This sets the initial directory at C://Users/{user.home}
      * This creates two listeners for the NoteFolder list view and the Note list view objects.
      *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  {@code null} if the location is not known.
+     * @param resources The resources used to localize the root object, or {@code null} if
+     *                  the root object was not localized.
      * @author Jet, Collin
-     * @param location
-     * The location used to resolve relative paths for the root object, or
-     * {@code null} if the location is not known.
-     *
-     * @param resources
-     * The resources used to localize the root object, or {@code null} if
-     * the root object was not localized.
      */
     @Override
-    public void initialize (URL location, ResourceBundle resources) throws NullPointerException {
+    public void initialize(URL location, ResourceBundle resources) throws NullPointerException {
         //userHomeDirectory = System.getProperty("user.home"); //"C://users/userName"
         twoNoteDirectory = System.getProperty("user.home").concat("\\") + "TwoNotes";
         System.out.println("Current Directory = " + twoNoteDirectory);
@@ -374,15 +369,15 @@ public class MainController implements Initializable {
         addFolderListView.getFocusModel().focusedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println(addFolderListView.getItems());
-                NoteFolder currentFolder = data.get((Integer) newValue);
+
+                currentFolder = data.get((Integer) newValue);
                 noteListView.getItems().clear();
 
                 List<String> names = currentFolder.getFolder().stream().map(new Function<Note, String>() {
                     @Override
                     public String apply(Note note) {
-                       return note.getName();
-                   }
+                        return note.getName();
+                    }
                 }).toList();
 
                 noteListView.getItems().addAll(names); //gets the current folder names (not notes)
@@ -390,13 +385,25 @@ public class MainController implements Initializable {
                     @Override
                     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                         Note currentNote = currentFolder.getFolder().get((Integer) newValue);
-                        //currentNote
+                        fileTitle.clear();
+                        fileTitle.appendText(currentNote.getName());
+                        fileContent.clear();
+                        fileContent.appendText(currentNote.getNoteContent());
+
                     }
                 });
-                //noteListView.getItems().addAll(names); //gets the current folder names (not notes)
+
             }
         });
 
+    }
+
+    public static boolean directoryExists(String directoryPath) {
+        File directory = new File(directoryPath);
+        return directory.exists() && directory.isDirectory();
+    }
+    public void loadList(){
+        //addFolderListView.getItems().addAll(Main.loadData.getData());
     }
 
 }

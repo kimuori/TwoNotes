@@ -1,10 +1,7 @@
 package Notes;
 
-import javafx.beans.InvalidationListener;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
-
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 public class NoteFolder extends NoteAbstract implements Organizable {
 
@@ -21,6 +18,8 @@ public class NoteFolder extends NoteAbstract implements Organizable {
         //String str2 = "{user.dir}" + "Folder1";
 
     }
+
+
     public String getName() {
         return name;
     }
@@ -44,7 +43,7 @@ public class NoteFolder extends NoteAbstract implements Organizable {
         }
     }
 
-    public void setFolder(ObservableList<Note> folder) {
+    public void setFolder(List<Note> folder) {
         this.folder = folder;
     }
 
@@ -54,6 +53,7 @@ public class NoteFolder extends NoteAbstract implements Organizable {
 
     public void setIndex(int index) {
         this.index = index;
+
     }
 
 

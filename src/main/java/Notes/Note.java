@@ -12,12 +12,17 @@ public class Note extends NoteAbstract implements Organizable {
 
 
 
-    public Note(String name, int noteID) {
+    private String noteContent;
+
+
+
+    public Note(String name, int noteID, String noteContent) {
         this.name = name;
         this.noteID = noteID;
         //String str = "text.txt";
         //String str2 = "Folder1";
         //String str3 = "C://Users/Jemina/Folder1/text.txt";
+        this.noteContent = noteContent;
     }
 
     // Implement methods from the Organizable interface
@@ -37,6 +42,14 @@ public class Note extends NoteAbstract implements Organizable {
 
     public void setNoteID(int noteID) {
         this.noteID = noteID;
+        this.noteContent = noteContent;
+    }
+    public String getNoteContent() {
+        return noteContent;
+    }
+
+    public void setNoteContent(String noteContent) {
+        this.noteContent = noteContent;
     }
 
     //public String getContent(){return content;}
