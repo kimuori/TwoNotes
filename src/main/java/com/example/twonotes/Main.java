@@ -33,6 +33,7 @@ public class Main extends Application {
         String newFolderDirectory = userHomeDirectory.concat("\\") + "TwoNotes";
         Path path = Paths.get(newFolderDirectory);
         Files.createDirectories(path);
+
     }
 
     public static void main(String[] args) {

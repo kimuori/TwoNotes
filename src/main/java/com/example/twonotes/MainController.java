@@ -7,7 +7,6 @@ import Notes.NoteFolder;
 import java.io.*;
 import java.io.IOException;
 
-import java.lang.reflect.InvocationTargetException;
 import java.nio.file.*;
 
 import java.util.ArrayList;
@@ -65,14 +64,8 @@ public class MainController implements Initializable {
     ListView<String> noteListView;
   
     @FXML
-    Button deleteFolderButton;
-  
-    @FXML
     ListView<String> addFolderListView;
-  
-    @FXML
-    Button addFolderButton;
-  
+
     @FXML
     private TextArea fileContent;
 
@@ -84,6 +77,12 @@ public class MainController implements Initializable {
 
     @FXML
     private Button deleteNoteButton;
+
+    @FXML
+    Button addFolderButton;
+
+    @FXML
+    Button deleteFolderButton;
 
     /**
      * addNoteButtonOnAction method is called when "Add Note" button is clicked. It will
@@ -137,10 +136,7 @@ public class MainController implements Initializable {
             index2++;
             noteListView.getItems().add(aNote.getName());
 
-            // REMOVED: while loop to read text file name
-            // while (scanTitle.hasNextLine()){
-            fileTitle.appendText(selectedFile.getName());
-            //}
+            fileTitle.appendText(selectedFile.getName()); // file's name shows up on fileTitle text label
 
             // reads the text file content each line
             while (scan.hasNextLine()){
@@ -203,16 +199,6 @@ public class MainController implements Initializable {
      */
     @FXML
     private void deleteNoteButtonOnAction (ActionEvent event) throws IOException, NoSuchFileException, DirectoryNotEmptyException, FileSystemException {
-        /* Debugging code portion 1
-        File textFilePath = selectedFile;
-        textFilePath.delete();
-        if (textFilePath.delete()) {
-            System.out.println("Successfully deleted file.");
-        } else {
-            System.out.println("Failed to delete the file.");
-        } */
-
-        /* Debugging code portion 2 */
         //NOTE: this delete button does not successfuly delete the text file due to being used in another process.
         //Need a way to "close out" the text file and then delete it.
         fileContent.clear();
@@ -283,10 +269,7 @@ public class MainController implements Initializable {
             index2++;
             noteListView.getItems().add(aNote.getName());
 
-            // REMOVED: while loop to read text file name
-            //while (scanTitle.hasNextLine()){
             fileTitle.appendText(selectedFile.getName());
-            //}
 
             // reads the text file content each line
             while (scan.hasNextLine()){
@@ -393,10 +376,9 @@ public class MainController implements Initializable {
                         //currentNote
                     }
                 });
-                //noteListView.getItems().addAll(names); //gets the current folder names (not notes)
+                noteListView.getItems().addAll(names); //gets the current folder names (not notes)
             }
         });
 
     }
-
 }

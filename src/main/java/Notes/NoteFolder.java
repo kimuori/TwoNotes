@@ -36,7 +36,7 @@ public class NoteFolder extends NoteAbstract implements Organizable {
     }
 
     public List<Note> getFolder() {
-        if(folder == null) {
+        if (folder == null) {
             return folder = Collections.emptyList();
         }
         else {
