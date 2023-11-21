@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="Added main folder &quot;TwoNotes&quot; inside the user's home directory. Folder button functionality can now populate inside the main Folder.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="4485145d-50a2-47c4-9952-b868ed137981" name="Changes" comment="fixed bugs on button names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Notes/NoteFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notes/NoteFolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twonotes/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/twonotes/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699926575086</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fixed bugs on button names">
+      <option name="closed" value="true" />
+      <created>1700528516027</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1700528516027</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -354,7 +354,8 @@
     <MESSAGE value="Minor change in the README." />
     <MESSAGE value="Merged Collin's work with folder directory functionalities. All controllers are working, despite buggy, it can still run because exceptions are handled." />
     <MESSAGE value="Added main folder &quot;TwoNotes&quot; inside the user's home directory. Folder button functionality can now populate inside the main Folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added main folder &quot;TwoNotes&quot; inside the user's home directory. Folder button functionality can now populate inside the main Folder." />
+    <MESSAGE value="fixed bugs on button names" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs on button names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

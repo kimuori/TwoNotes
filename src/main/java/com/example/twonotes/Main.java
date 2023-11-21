@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,7 +31,7 @@ public class Main extends Application {
         stage.show();
 
         String userHomeDirectory = System.getProperty("user.home");
-        String newFolderDirectory = userHomeDirectory.concat("\\") + "TwoNotes";
+        String newFolderDirectory = userHomeDirectory.concat(File.separator).concat("TwoNotes");
         Path path = Paths.get(newFolderDirectory);
         Files.createDirectories(path);
 
