@@ -10,8 +10,8 @@ module com.example.twonotes {
 
     opens com.example.twonotes to javafx.fxml;
     exports com.example.twonotes;
-    exports User;
-    opens User to javafx.fxml;
+    //exports User;
+    //opens User to javafx.fxml;
     exports Notes;
     opens Notes to javafx.fxml;
 }
